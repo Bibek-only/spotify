@@ -1,0 +1,33 @@
+.flex {
+  display: flex;
+}
+.main-center {
+  justify-content: center;
+}
+.cross-centrer {
+  align-items: center;
+}
+.bdr{
+   margin: 3px;
+}
+.back-color{
+    background-color: red;
+}
+.bg-black{
+    background-color: black;
+}
+.bg-gry{
+    background-color: #121212;
+}
+.white{
+    filter: invert(1);
+}
+.m1{
+   
+}
+.p1{
+    padding: 25px;
+}
+.radious{
+    border-radius: 5px;
+}
