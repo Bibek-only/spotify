@@ -69,6 +69,7 @@ footer a{
     background-color: #121212;
     height: 70px;
     width: 100%;
+   
     
 }
 #navbar img{
@@ -77,7 +78,76 @@ footer a{
 }
 #navbar .buttons{
     margin-right: 30px;
+    display: flex;
+    gap: 20px;
 }
+#navbar .buttons button{
+    height: 45px;
+    width: 11 0px;
+    border-radius: 30px;
+    border: none;
+}
+#navbar .buttons #btn1{
+    background-color: #121212;
+}
+#navbar .buttons #btn2{
+    color: black;
+}
+
 #gallary{
     padding-left: 20px;
 }
+#gallary h1{
+    margin-top: 30px;
+    margin-left: 15px;
+}
+.cardContainer{
+    margin-top: 22px;
+    margin-left: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 75vh;
+    overflow-y: scroll;
+}
+.cardContainer::-webkit-scrollbar {
+    width: 0; 
+  }
+.card > *{
+    padding-top: 10px;
+}
+.card{
+   
+    width: 200px; 
+   padding: 10px;
+   border-radius: 5px;
+   background-color: rgb(38, 37, 37);
+   margin: 10px;
+   position: relative;
+
+}
+.card #cardImg{
+    width: 100%;
+    object-fit: contain;
+    object-position: center center;
+}
+#playButton{
+    position: absolute;
+    width: 45px;
+    right: 27px;
+    bottom: 120px;
+    opacity: 0;
+    transition-duration: 1s;
+}
+#playButton:hover{
+    opacity: 1;
+    bottom: 140px;
+}
+
+
+
+
+
+
+
+  
+  
