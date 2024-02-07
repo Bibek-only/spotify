@@ -83,7 +83,7 @@ footer a{
 }
 #navbar .buttons button{
     height: 45px;
-    width: 11 0px;
+    width: 110px;
     border-radius: 30px;
     border: none;
 }
@@ -108,6 +108,7 @@ footer a{
     flex-wrap: wrap;
     max-height: 75vh;
     overflow-y: scroll;
+    
 }
 .cardContainer::-webkit-scrollbar {
     width: 0; 
@@ -134,20 +135,32 @@ footer a{
     position: absolute;
     width: 45px;
     right: 27px;
-    bottom: 120px;
+    bottom: 100px;
     opacity: 0;
-    transition-duration: 1s;
+    transition-duration: 0.7s;
 }
-#playButton:hover{
+.card:hover #playButton{
     opacity: 1;
-    bottom: 140px;
+    bottom: 120px;
 }
-
-
-
-
-
-
-
+.playBar{
+    height: 70px;
+    width: 75vw;
+    max-width: 100%;
+    margin: auto;
+    margin-top: 10px;
+    position: fixed;
+    bottom: 14px;
+    background-color: rgb(31, 31, 31);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    
+   
+}
+.playBar img{
+    width: 40px;
+}
   
   
