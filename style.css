@@ -38,8 +38,36 @@ body{
     left: 370px;
 }
 #library{
-    min-height: 80vh;
+    min-height: 69vh;
     position: relative;
+}
+
+#songList{
+    max-height: 50vh;
+    margin-top:30px ;
+    overflow-y:scroll ;
+}
+
+
+#songList::-webkit-scrollbar {
+    width: 0; 
+  }
+
+.music-play{
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    gap: 20px;
+    padding: 5px 0 5px 0;
+  }
+.music-play .icon{
+    width: 30px;
+    opacity: 0;
+    transition-duration: 0.5s;
+}
+.music-play:hover .icon{
+    opacity: 1;
 }
 footer{
     position: absolute;
