@@ -23,11 +23,27 @@
     filter: invert(1);
 }
 .m1{
-   
+   margin: 1rem;
 }
 .p1{
     padding: 25px;
 }
 .radious{
     border-radius: 5px;
+}
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+.flex-grow {
+    flex-grow: 1;
+}
+.text-center {
+    text-align: center;
+}
+.gap-10 {
+    gap: 10px;
+}
+.cursor-pointer {
+    cursor: pointer;
 }

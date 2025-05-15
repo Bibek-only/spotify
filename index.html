@@ -6,6 +6,7 @@
     <title>Spotify - Web Player: Music for everyone</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="utility.css" />
+    <link rel="stylesheet" href="mobile.css" />
   </head>
   <body>
     <div id="main" class="flex">
@@ -45,9 +46,7 @@
             />
           </div>
           <div id="songList">
-            <ul>
-              
-            </ul>
+            <ul></ul>
           </div>
           <footer id="footer">
             <a href="#">Legal</a>
@@ -99,7 +98,7 @@
             <div class="card">
               <img
                 id="cardImg"
-                src="resources/photos/dinner.jpg"
+                src="resources/photos/flower.jpeg"
                 alt="card image"
               />
               <h2>dinner with friends</h2>
@@ -113,17 +112,43 @@
           </div>
         </div>
         <div class="playBar">
-          <img
-            class="white"
-            src="resources/icons/previous.svg"
-            alt="previous"
-          />
-          <img
-            class="white"
-            src="resources/icons/playPuse.svg"
-            alt="previous"
-          />
-          <img class="white" src="resources/icons/next.svg" alt="previous" />
+          <div class="now-playing-info">
+            <p id="nowPlaying">No song playing</p>
+          </div>
+          <div class="playback-controls">
+            <img
+              class="white previous"
+              src="resources/icons/previous.svg"
+              alt="previous"
+            />
+            <img
+              class="white play-pause"
+              src="resources/icons/playPuse.svg"
+              alt="play/pause"
+            />
+            <img class="white next" src="resources/icons/next.svg" alt="next" />
+          </div>
+          <div class="progress-container">
+            <span class="current-time">0:00</span>
+            <div class="progress-bar-container">
+              <div class="progress-bar"></div>
+            </div>
+            <span class="total-time">0:00</span>
+          </div>
+          <div class="volume-control">
+            <img
+              class="white next"
+              src="resources/icons/volume.svg"
+              alt="next"
+            />
+            <input
+              type="range"
+              class="volume-slider"
+              min="0"
+              max="100"
+              value="100"
+            />
+          </div>
         </div>
       </div>
     </div>
