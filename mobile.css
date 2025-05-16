@@ -30,7 +30,7 @@
     
     .nav-arrow::before {
         content: '';
-        background: url('resources/icons/logo.svg') no-repeat;
+        background: url('/resources/icons/logo.svg') no-repeat;
         background-size: contain;
         width: 100px;
         height: 30px;

@@ -1,47 +1,17 @@
 async function getsSongs() {
-  try {
-    // Use relative path instead of hardcoded URL for production compatibility
-    let response = await fetch("/songs");
-    let html = await response.text();
-
-    console.log("Songs API response:", html); // Debug log
-
-    let div = document.createElement("div");
-    div.innerHTML = html;
-    let as = div.getElementsByTagName("a");
-    let songArr = [];
-
-    for (let i = 0; i < as.length; i++) {
-      const ele = as[i];
-      const href = ele.getAttribute("href");
-      console.log("Link found:", href, ele.textContent); // Debug log
-
-      // Extract filename from href (more robust pattern matching)
-      if (
-        href &&
-        (href.endsWith(".m4a") ||
-          href.endsWith(".mp3") ||
-          href.endsWith(".wav"))
-      ) {
-        const songName = href.split("/").pop();
-        console.log("Added song:", songName); // Debug log
-        songArr.push(songName);
-      }
+  let a = await fetch("/songs/");
+  let b = await a.text();
+  let div = document.createElement("div");
+  div.innerHTML = b;
+  let as = div.getElementsByTagName("a");
+  let songArr = [];
+  for (let i = 0; i < as.length; i++) {
+    const ele = as[i];
+    if (ele.href.endsWith(".m4a")) {
+      songArr.push(ele.href.split("/songs/")[1]);
     }
-
-    // If no songs were found, add some sample songs for testing
-    if (songArr.length === 0) {
-      console.log("No songs found, adding sample songs");
-      songArr = ["sample1.mp3", "sample2.mp3", "sample3.mp3"];
-    }
-
-    console.log("Final song array:", songArr); // Debug log
-    return songArr;
-  } catch (error) {
-    console.error("Error fetching songs:", error);
-    // Return sample songs if fetch fails
-    return ["sample1.mp3", "sample2.mp3", "sample3.mp3"];
   }
+  return songArr;
 }
 
 async function main() {
@@ -58,7 +28,7 @@ async function main() {
     const song = songs[i];
     songul.innerHTML += `<li data-index="${i}">
             <div class="music-play">
-              <img src="/resources/icons/play.svg" alt="" class="icon">
+              <img src="resources/icons/play.svg" alt="" class="icon">
               <img src="https://i.scdn.co/image/ab67616d00004851d6676fda303d26d42d8ca391" alt="">
               <div class="music-info">
                 <p class="song-name">${song.replaceAll("%20", " ")}</p>
@@ -73,21 +43,8 @@ async function main() {
   function playSong(index) {
     if (index >= 0 && index < songs.length) {
       currentSongIndex = index;
-
-      // Log what song is being played
-      console.log("Playing song:", songs[currentSongIndex]);
-
-      // Create full URL
       audio.src = `/songs/${songs[currentSongIndex]}`;
-
-      // Attempt to play with error handling
-      audio.play().catch((error) => {
-        console.error("Error playing audio:", error);
-        alert(
-          "Could not play the song. Make sure you have audio files in the public/songs directory."
-        );
-      });
-
+      audio.play();
       isPlaying = true;
       updatePlayPauseIcon();
       updateNowPlayingInfo();
@@ -126,11 +83,11 @@ async function main() {
     if (playPauseBtn) {
       if (isPlaying) {
         // Use the pause icon instead of playmusic.svg
-        playPauseBtn.src = "/resources/icons/playmusic.svg";
+        playPauseBtn.src = "resources/icons/playmusic.svg";
         // Make sure the icon is white
         playPauseBtn.classList.add("white");
       } else {
-        playPauseBtn.src = "/resources/icons/playPuse.svg";
+        playPauseBtn.src = "resources/icons/playPuse.svg";
         playPauseBtn.classList.add("white");
       }
     }
